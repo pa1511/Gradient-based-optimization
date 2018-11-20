@@ -60,7 +60,7 @@ public class SinSystemParameterDetection {
 			graph.addPoint(row[0], row[1]);
 		}
 		graph.display();
-
+		
 		//Start solution
 		int variableNumber = sinFunction.getCoefficientCount();
 		IStartSolutionGenerator<DoubleArraySolution> startSolutionGenerator = 
@@ -77,7 +77,7 @@ public class SinSystemParameterDetection {
 			 ThroughOneFitnessEvaluator.evaluationMethod.applyAsDouble(
 						FunctionValueFitnessEvaluator.evaluationMethod.applyAsDouble(v)
 		));
-		int sleepTimeInMs = 500;
+		int sleepTimeInMs = 250;
 		evaluator.addObserver(new BestObserver<>(decoder, Arrays.asList(
 				new PrintBestObserver<DoubleArraySolution,double[]>(System.out),
 				new PrototypeGraphngBestObserver<DoubleArraySolution>(sinFunction, graph),
